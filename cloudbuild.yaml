@@ -1,0 +1,12 @@
+strps:
+  - id: 'terraform init'
+    name: 'hashicorp/terraform:1:3:0'
+    args: terraform init 
+    
+  - id:
+    name: 'hashicorp/terraform:1:3:0'
+    args: terraform plan
+    
+  - id:
+    name: 'hashicorp/terraform:1:3:0'
+    args: terraform apply 
