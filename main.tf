@@ -1,11 +1,18 @@
-resource "random_string" "random"
-{
-length = 16
-special = true 
-override_special = "/@$"
+terraform {
+  required_providers{
+  google = {
+    
+    source  = "hashicorp/google"
+    version = " ~> 4.60.0"
+  }  
+  } 
 }
 
-output "random_string"
-{
-value = random_string.random.id
+provider "google" {
+  project = "vm-deployment-apac"
+  region  = "asia-east1"
+}
+
+resource "google_compute_network" "vpc-cloud-build" {
+  name                    = "vpc-through-cloud-build"
 }
