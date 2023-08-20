@@ -26,7 +26,7 @@ for_each     = var.virtual_machines
 server_name  = each.value.server_name
 machine_type = each.value.machine_type
 zone         = each.value.server_zone
-network_name = google_compute_network.vpc-apac-01.name
+network_name = each.value.vpc_name
 static_ip    = each.value.statics_ip
 subnet_name  = google_compute_subnetwork.subnet-apac-01.name
 }
